@@ -1,3 +1,6 @@
+# Setup
+After using `npx create-react-app .`, if needed, run `setup.sh` to install dependencies.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

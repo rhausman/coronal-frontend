@@ -1,0 +1,19 @@
+
+.container {
+        background-image: url("https://i.pinimg.com/originals/e3/2b/6e/e32b6e8b0e19fc2476f2ba862997a6d9.jpg");
+        flex: 1;
+        flex-direction: "column";
+        background-repeat: no-repeat;
+        object-fit: scale;
+        height:700px;
+        background-size:contain;
+    }
+
+.img {
+        flex: 1;
+        resize: "cover";
+        justify-content: "center";
+        max-width: 100%;
+        height: auto;
+        margin-top: 150px;
+}
