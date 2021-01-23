@@ -33,15 +33,18 @@ function FileForm(props) {
         setValidated(true);
         // request an analysis from the API. 
         // provide the setter and the appropriate file
-        requestFromApi(setResp, formDataObj["heart_file"])
+        requestFromApi(setResp, formDataObj)
 
     };
 
     return (
         <Jumbotron className="fluid  display-panel">
             <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                <Form.Group id="fileInputGroup" controlId="inputForm.file" size="lg">
-                    <Form.File id="inputFile" label="1. Upload Image" name="heart_file" />
+                <Form.Group id="heartFileInputGroup" controlId="inputForm.file" size="lg">
+                    <Form.File id="inputFile" label="1. Upload Heart File" name="heart_file" />
+                </Form.Group>
+                <Form.Group id="stepFileInputGroup" controlId="inputForm.file" size="lg">
+                    <Form.File id="inputFile" label="2. Upload Steps File" name="steps_file" />
                 </Form.Group>
                 <hr />
                 <Button type="submit">2. Recieve Analysis</Button>
@@ -51,8 +54,9 @@ function FileForm(props) {
     )
 }
 
-async function requestFromApi(setter, heart_file) {
+async function requestFromApi(setter, formDataObj) {
     // make the request
+    const { heart_file, steps_file } = formDataObj
 
     let form_data = new FormData();
     // config the headers and include the image
@@ -62,7 +66,8 @@ async function requestFromApi(setter, heart_file) {
         }
     }
     // send the file with the appropriate key name so it is parsed
-    form_data.append('file', heart_file) //, image.name);
+    form_data.append('heart_file', heart_file) //, image.name);
+    form_data.append('steps_file', steps_file)
 
     axios.post(api_url + "analyze", form_data, config)
         .then(res => res.data)
