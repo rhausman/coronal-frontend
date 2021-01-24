@@ -16,7 +16,7 @@ function App() {
       <Navbar expand="small" theme="light" sticky="none" style={{ color: "aqua" }}>
         <Container fluid>
 
-          <Col className="col-md-3"><Nav><h1>Coronál</h1></Nav></Col>
+          <Col className="col-md-3"><Nav><h1>Atrium</h1></Nav></Col>
           <Col className="col-md-7">
             <Nav>
               <h3>Diagnose COVID-19 using  <a style={{ textDecoration: "none" }} href="https://www.nature.com/articles/s41551-020-00640-6">your heart's data!</a></h3>
