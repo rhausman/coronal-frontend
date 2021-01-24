@@ -23,18 +23,22 @@ function App() {
             </Nav>
           </Col>
           <Col>
-            <Nav>
-              Like it? Check out <a href="https://richard-website-1d919.firebaseapp.com/" style={{ textDecoration: "none" }}>my site!</a>
-            </Nav>
+
           </Col>
         </Container>
       </Navbar>
 
       <ShirtContext.Provider value={value}>
         <div style={{ width: "80%" }} >
-          <FileForm responseSetter={setResp} />
-
-          <ShirtDisplay />
+          <Row>
+            <Col className="col-md-2"></Col>
+            <Col className="col-md-5">
+              <FileForm responseSetter={setResp} />
+            </Col>
+            <Col className="col-md-5">
+              <ShirtDisplay />
+            </Col>
+          </Row>
         </div>
 
 
